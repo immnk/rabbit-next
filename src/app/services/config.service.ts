@@ -11,6 +11,10 @@ export interface AppConfig {
   login: string;
   accounts: string;
   CUSTOMER_KEY_STORAGE: string;
+  GRAPH_EXPENDITURE: string;
+  transactions: string;
+  canibuy: string;
+  transfer: string;
 }
 
 /**
@@ -19,11 +23,15 @@ export interface AppConfig {
 export const APP_DI_CONFIG: AppConfig = {
   appName: 'Genie',
   REST_END_POINT: environment.END_POINT,
-  // login: 'login',
-  login: '5c83a16d30000040176b0cac',
-  accounts: '5c83a0ce300000740d6b0caa',
-  CUSTOMER_KEY_STORAGE: 'customerId'
-  // accounts: 'accounts'
+  login: 'login',
+  accounts: 'accounts',
+  // login: '5c83a16d30000040176b0cac',
+  // accounts: '5c83a0ce300000740d6b0caa',
+  CUSTOMER_KEY_STORAGE: 'customerId',
+  GRAPH_EXPENDITURE: 'accounts/trends',
+  transactions: 'transactions',
+  canibuy: '',
+  transfer: 'transfer'
 }
 
 /**

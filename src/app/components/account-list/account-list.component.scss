@@ -1,5 +1,10 @@
 .account-list {
-  width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
+
+  .graph-wrapper {
+    padding: 24px 0 12px;
+  }
 }
 
 .my-card-wrapper {

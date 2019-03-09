@@ -1,0 +1,38 @@
+@import '../../../assets/scss/variables';
+
+.container-fluid {
+  //   min-height: 100vh;
+  height: 100%;
+  background: $theme-foreground url('../../../assets/skyine.jpg') no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.transfer {
+  width: 300px;
+  background: $theme-foreground;
+  border-top: 2px solid $theme-primary;
+  padding: 24px 24px 28px 24px;
+  margin: 0 auto;
+
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+    left: auto;
+    right: 130px;
+    transform: translateY(-50%);
+  }
+
+  .logo {
+    display: block;
+    height: 100px;
+    margin: 12px auto;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .error {
+    border-bottom: 2px solid red;
+  }
+}

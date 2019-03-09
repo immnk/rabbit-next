@@ -1,0 +1,7 @@
+---
+applications:
+- name: hack2hire18-ui
+  buildpacks:
+  - staticfile_buildpack
+  path: dist/rabbit-next
+  

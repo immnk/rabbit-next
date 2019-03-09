@@ -3,8 +3,6 @@ import { AppConfig, APP_CONFIG_TOKEN } from '../../services/config.service';
 import { HttpClient } from '@angular/common/http';
 import { LocalStorageService } from 'ngx-webstorage';
 import { Router } from '@angular/router';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { data } from './data';
 
 @Component({
   selector: 'app-account-list',
@@ -13,8 +11,8 @@ import { data } from './data';
 })
 export class AccountListComponent implements OnInit {
   customerData: any = {};
+  graphData: any;
 
-  multi: any[] = data;
   view: any[] = [700, 400];
 
   // options
@@ -23,9 +21,9 @@ export class AccountListComponent implements OnInit {
   gradient = false;
   showLegend = true;
   showXAxisLabel = true;
-  xAxisLabel = 'Country';
+  xAxisLabel = 'Months';
   showYAxisLabel = true;
-  yAxisLabel = 'Population';
+  yAxisLabel = 'Amount';
 
   colorScheme = {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
@@ -45,6 +43,10 @@ export class AccountListComponent implements OnInit {
         this.customerData = res;
       }, err => {
         console.error(err);
+      });
+    this.http.get(this.config.REST_END_POINT + this.config.GRAPH_EXPENDITURE + '/' + this.storage.retrieve(this.config.CUSTOMER_KEY_STORAGE))
+      .subscribe((res: any) => {
+        this.graphData = res;
       });
   }
 

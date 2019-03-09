@@ -1,3 +1,37 @@
-<p>
-  transaction-list works!
-</p>
+<div class="account-info">
+  <h4>DBS Multiplier Account</h4>
+  <p>220-1234566</p>
+  <div class="row no-gutters">
+    <div class="col-6 border-right">
+      <p class="row-title">Account Balance</p>
+      <p>$3000.00</p>
+    </div>
+    <div class="col-6">
+      <p class="row-title">Available Balance</p>
+      <p>$2700.00</p>
+    </div>
+  </div>
+</div>
+<div class="transactions">
+  <div class="btn-group btn-group-toggle" ngbRadioGroup name="monthRadio" [(ngModel)]="monthRadio">
+    <label ngbButtonLabel class="btn-primary rounded-0">
+      <input ngbButton type="radio" [value]="currentMonth"> {{ currentMonth }}
+    </label>
+    <label ngbButtonLabel class="btn-primary rounded-0">
+      <input ngbButton type="radio" value="lastMonth"> {{ lastMonth }}
+    </label>
+    <label ngbButtonLabel class="btn-primary rounded-0">
+      <input ngbButton type="radio" [value]="beforeLastMonth"> {{ beforeLastMonth }}
+    </label>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <p>TRF STARBUCKS MERCHANT</p>
+      <h3 class="float-md-right">S$ 450.00</h3>
+    </li>
+    <li class="list-group-item">
+      <p>TRF STARBUCKS MERCHANT</p>
+      <h3 class="float-md-right">S$ 450.00</h3>
+    </li>
+  </ul>
+</div>

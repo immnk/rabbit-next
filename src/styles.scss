@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+app-account-list,
+app-transfer {
+  width: 100%;
+}
+
+app-transfer {
+  min-height: calc(100vh - 152px);
+}

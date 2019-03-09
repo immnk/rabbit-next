@@ -1,3 +1,17 @@
-<p>
-  transfer works!
-</p>
+<div class="container-fluid">
+    <form class="transfer" [formGroup]="form" (submit)="transfer()" novalidate>
+      <img src="../../../assets/Genie_Right-Small.png" alt="logo" class="logo">
+      <div class="form-group">
+        <label for="payee">Payee Name</label>
+        <input type="text" class="form-control" id="payee" aria-describedby="payee" placeholder="Enter payee"
+          formControlName="payee" [ngClass]="{ 'error': form.controls['payee'].invalid && (form.controls['payee'].dirty || form.controls['payee'].touched) && form.controls['payee'].errors.required }">
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="number" class="form-control" id="amount" placeholder="Enter amount" formControlName="amount"
+          [ngClass]="{ 'error': form.controls['amount'].invalid && (form.controls['amount'].dirty || form.controls['amount'].touched) && form.controls['amount'].errors.required }">
+      </div>
+      <div class="text-danger p-y-2" *ngIf="isError">Please check your payee/amount</div>
+      <button type="submit" class="btn btn-primary">Transfer</button>
+    </form>
+  </div>

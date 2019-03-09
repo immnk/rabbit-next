@@ -1,0 +1,55 @@
+<div class="modal-header">
+  <h4 class="modal-title">Can I buy it?</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row mb-3">
+    <div class="col-12 btn-group">
+      <button class="btn btn-outline-primary col-6" (click)="speech.startListening()" [disabled]="speech.listening">
+        <img class="icon" src="../../../assets/mic-on.png">{{btnLabel}}
+      </button>
+
+      <button class="btn btn-outline-danger col-6" (click)="speech.abort()" [disabled]="!speech.listening">
+        <img class="icon" src="../../../assets/mic-off.png">Stop
+      </button>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="errorMsg">
+    <div class="col-12">
+      <p class="alert alert-warning">
+        {{errorMsg}}
+      </p>
+    </div>
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="price">Price ?</span>
+    </div>
+    <input type="text" class="form-control" placeholder="price of item" aria-label="price" aria-describedby="price"
+      [(ngModel)]="price">
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="buy">Buy Item</span>
+    </div>
+    <input type="text" class="form-control" placeholder="whats the item?" aria-label="item" aria-describedby="buy"
+      [(ngModel)]="item">
+  </div>
+
+  <div class="row" *ngIf="errorMsg">
+    <div class="col-12">
+      <p class="alert" [ngClass]="{'alert-success': canibuy.response == true, 'alert-error': canibuy.response == false}">
+        {{canibuy.msg}}
+      </p>
+    </div>
+  </div>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" (click)="check()">Can I Buy?</button>
+</div>

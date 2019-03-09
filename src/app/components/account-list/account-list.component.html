@@ -1,10 +1,12 @@
 <div class="account-list">
-  <div class="row">
-    <div class="col-12">
-      <ngx-charts-bar-vertical-2d [view]="view" [scheme]="colorScheme" [results]="multi" [gradient]="gradient" [xAxis]="showXAxis"
-        [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
-        [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel">
-      </ngx-charts-bar-vertical-2d>
+  <div class="container">
+    <div class="row no-gutters" *ngIf="graphData !=undefined">
+      <div class="col-12 graph-wrapper">
+        <ngx-charts-bar-vertical-2d [view]="view" [scheme]="colorScheme" [results]="graphData" [gradient]="gradient"
+          [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel">
+        </ngx-charts-bar-vertical-2d>
+      </div>
     </div>
   </div>
 
@@ -19,7 +21,7 @@
             <h5 class="card-title">{{ account.accountType }}</h5>
             <p class="card-text">{{ account.accountId }}</p>
             <a routerLink="/dashboard/transactions/{{account.accountId}}" class="btn btn-primary">Show transactions</a>
-            <h4 class="card-highlight">{{ account.accountBalance }}</h4>
+            <h4 class="card-highlight">S$ {{ account.accountBalance }}</h4>
           </div>
         </div>
       </div>
@@ -37,7 +39,7 @@
             <h5 class="card-title">{{ account.accountType }}</h5>
             <p class="card-text">{{ account.accountId }}</p>
             <a routerLink="/dashboard/transactions/{{account.accountId}}" class="btn btn-primary">Show transactions</a>
-            <h4 class="card-highlight">{{ account.amount }}</h4>
+            <h4 class="card-highlight">S${{ account.amount }}</h4>
           </div>
         </div>
       </div>

@@ -17,6 +17,8 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { FramesComponent } from './components/frames/frames.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { VoiceChatComponent } from './modals/voice-chat/voice-chat.component';
+import { SpeechRecognitionService } from './services/speech-recognition.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { LoadingComponent } from './components/loading/loading.component';
     SettingsComponent,
     FramesComponent,
     TransferComponent,
-    LoadingComponent
+    LoadingComponent,
+    VoiceChatComponent
   ],
   imports: [
     BrowserModule,
@@ -39,10 +42,12 @@ import { LoadingComponent } from './components/loading/loading.component';
     NgbModule,
     NgxWebstorageModule.forRoot(),
     NgxChartsModule,
-    BrowserAnimationsModule 
+    BrowserAnimationsModule
   ],
+  entryComponents: [VoiceChatComponent],
   providers: [
     { provide: APP_CONFIG_TOKEN, useValue: APP_DI_CONFIG },
+    SpeechRecognitionService
   ],
   bootstrap: [AppComponent]
 })
