@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  END_POINT: ""
+  END_POINT: "http://192.168.0.106:8080/"
 };
 
 /*

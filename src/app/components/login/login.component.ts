@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 
   loginClicked() {
     if (this.form.valid) {
-      const options = {
+      const body = {
         headers: {
         },
         params: {
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
           password: this.form.get('password').value
         }
       }
-      this.http.get(this.config.REST_END_POINT, options).subscribe(res => {
+      this.http.post(this.config.REST_END_POINT + this.config.login, body).subscribe(res => {
         console.log('Authenticated user');
         this.router.navigate(['/dashboard']);
       }, err => {
