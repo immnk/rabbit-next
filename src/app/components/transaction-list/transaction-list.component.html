@@ -15,13 +15,15 @@
 <div class="transactions">
   <div class="btn-group btn-group-toggle" ngbRadioGroup name="monthRadio" [(ngModel)]="monthRadio">
     <label ngbButtonLabel class="btn-primary rounded-0">
-      <input ngbButton type="radio" [value]="currentMonth"> {{ currentMonth }}
+      <input ngbButton type="radio" [value]="currentMonth" (click)="getTxnDetails(currentMonthIndex)"> {{ currentMonth
+      }}
     </label>
     <label ngbButtonLabel class="btn-primary rounded-0">
-      <input ngbButton type="radio" value="lastMonth"> {{ lastMonth }}
+      <input ngbButton type="radio" value="lastMonth" (click)="getTxnDetails(lastMonthIndex)"> {{ lastMonth }}
     </label>
     <label ngbButtonLabel class="btn-primary rounded-0">
-      <input ngbButton type="radio" [value]="beforeLastMonth"> {{ beforeLastMonth }}
+      <input ngbButton type="radio" [value]="beforeLastMonth" (click)="getTxnDetails(beforeLastMonthIndex)"> {{
+      beforeLastMonth }}
     </label>
   </div>
   <ul class="list-group">

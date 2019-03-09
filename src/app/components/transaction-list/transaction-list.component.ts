@@ -26,9 +26,11 @@ export class TransactionListComponent implements OnInit {
     'December'
   ];
   currentMonthIndex = (new Date().getMonth() + this.m.length) % this.m.length;
+  lastMonthIndex = (this.currentMonthIndex - 1 + this.m.length) % this.m.length;
+  beforeLastMonthIndex = (this.currentMonthIndex - 2 + this.m.length) % this.m.length;
   currentMonth = this.m[this.currentMonthIndex];
-  lastMonth = this.m[(this.currentMonthIndex - 1 + this.m.length) % this.m.length];
-  beforeLastMonth = this.m[(this.currentMonthIndex - 2 + this.m.length) % this.m.length];
+  lastMonth = this.m[this.lastMonthIndex];
+  beforeLastMonth = this.m[this.beforeLastMonthIndex];
   monthRadio = this.currentMonth;
 
   constructor(
@@ -40,19 +42,23 @@ export class TransactionListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getTxnDetails(this.currentMonthIndex);
+  }
+
+  getTxnDetails(m) {
     this.route.params.subscribe(params => {
       console.log(params);
       const options = {
         headers: {},
         params: {
-          account_id: params.id,
-          customer_id: this.storage.retrieve(this.config.CUSTOMER_KEY_STORAGE)
+          accountId: params.id,
+          month: m
         }
-      }
+      };
       this.http.get(this.config.REST_END_POINT + this.config.transactions, options)
         .subscribe((res: any) => {
           this.transactions = res;
-        })
+        });
     });
   }
 

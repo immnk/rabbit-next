@@ -29,7 +29,7 @@ export const APP_DI_CONFIG: AppConfig = {
   // accounts: '5c83a0ce300000740d6b0caa',
   CUSTOMER_KEY_STORAGE: 'customerId',
   GRAPH_EXPENDITURE: 'accounts/trends',
-  transactions: 'transactions',
+  transactions: 'getTransactions',
   canibuy: '',
   transfer: 'transfer'
 }
