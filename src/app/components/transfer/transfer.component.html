@@ -1,17 +1,22 @@
 <div class="container-fluid">
-    <form class="transfer" [formGroup]="transferForm" (submit)="transfer()" novalidate>
-      <img src="../../../assets/Genie_Right-Small.png" alt="logo" class="logo">
-      <div class="form-group">
-        <label for="payee">Payee Name</label>
-        <input type="text" class="form-control" id="payee" aria-describedby="payee" placeholder="Enter payee"
-          formControlName="payee" [ngClass]="{ 'error': transferForm.controls['payee'].invalid && (transferForm.controls['payee'].dirty || transferForm.controls['payee'].touched) && transferForm.controls['payee'].errors.required }">
-      </div>
-      <div class="`-group">
-        <label for="amount">Amount</label>
-        <input type="number" class="form-control" id="amount" placeholder="Enter amount" formControlName="amount"
-          [ngClass]="{ 'error': transferForm.controls['amount'].invalid && (transferForm.controls['amount'].dirty || transferForm.controls['amount'].touched) && transferForm.controls['amount'].errors.required }">
-      </div>
-      <div class="text-danger p-y-2" *ngIf="isError">Please check your payee/amount</div>
-      <button type="submit" class="btn btn-primary">Transfer</button>
-    </form>
-  </div>
+  <form class="transfer" [formGroup]="transferForm" (submit)="transfer()" novalidate>
+    <img src="../../../assets/Genie_Right-Small.png" alt="logo" class="logo">
+    <div class="form-group">
+      <label for="fromAccount">From Account</label>
+      <input type="text" class="form-control" id="fromAccount" aria-describedby="payee" placeholder="Enter from account"
+        formControlName="fromAccount" [ngClass]="{ 'error': transferForm.controls['fromAccount'].invalid && (transferForm.controls['fromAccount'].dirty || transferForm.controls['fromAccount'].touched) && transferForm.controls['fromAccount'].errors.required }">
+    </div>
+    <div class="form-group">
+      <label for="payee">Payee Name</label>
+      <input type="text" class="form-control" id="payee" aria-describedby="payee" placeholder="Enter payee"
+        formControlName="payee" [ngClass]="{ 'error': transferForm.controls['payee'].invalid && (transferForm.controls['payee'].dirty || transferForm.controls['payee'].touched) && transferForm.controls['payee'].errors.required }">
+    </div>
+    <div class="form-group">
+      <label for="amount">Amount</label>
+      <input type="number" class="form-control" id="amount" placeholder="Enter amount" formControlName="amount"
+        [ngClass]="{ 'error': transferForm.controls['amount'].invalid && (transferForm.controls['amount'].dirty || transferForm.controls['amount'].touched) && transferForm.controls['amount'].errors.required }">
+    </div>
+    <div class="text-danger p-y-2" *ngIf="isError">Please check your payee/amount</div>
+    <button type="submit" class="btn btn-primary">Transfer</button>
+  </form>
+</div>

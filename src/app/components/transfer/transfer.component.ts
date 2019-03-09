@@ -13,6 +13,8 @@ import { AppConfig, APP_CONFIG_TOKEN } from 'src/app/services/config.service';
 export class TransferComponent implements OnInit {
   transferForm: FormGroup;
   isError: boolean;
+  customerData: any = {};
+
   constructor(
     fb: FormBuilder,
     public http: HttpClient,
@@ -20,12 +22,20 @@ export class TransferComponent implements OnInit {
     private storage: LocalStorageService,
     @Inject(APP_CONFIG_TOKEN) private config: AppConfig) {
     this.transferForm = fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      fromAccount: ['', Validators.required],
+      payee: ['', Validators.required],
+      amount: ['', Validators.required]
     });
   }
 
   ngOnInit() {
+    // this.http.get(this.config.REST_END_POINT + this.config.accounts + '/' + this.storage.retrieve(this.config.CUSTOMER_KEY_STORAGE))
+    //   .subscribe((res: any) => {
+    //     console.log(res);
+    //     this.customerData = res;
+    //   }, err => {
+    //     console.error(err);
+    //   });
   }
 
   transfer() {

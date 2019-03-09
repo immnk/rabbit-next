@@ -109,11 +109,12 @@ export class VoiceChatComponent implements OnInit, OnDestroy {
   }
 
   check() {
-    let options = {
+    this.speech.abort();
+    const options = {
       headers: {},
       params: {
-        'customer_id': this.storage.retrieve(this.config.CUSTOMER_KEY_STORAGE),
-        'price': this.price,
+        'client_id': this.storage.retrieve(this.config.CUSTOMER_KEY_STORAGE),
+        'trans_amount': this.price,
         'item': this.item
       }
     }

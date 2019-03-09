@@ -41,7 +41,7 @@
       [(ngModel)]="item">
   </div>
 
-  <div class="row" *ngIf="errorMsg">
+  <div class="row" *ngIf="(canibuy || {}).response">
     <div class="col-12">
       <p class="alert" [ngClass]="{'alert-success': canibuy.response == true, 'alert-error': canibuy.response == false}">
         {{canibuy.msg}}

@@ -6,6 +6,7 @@
   background: $theme-foreground url('../../../assets/skyine.jpg') no-repeat;
   background-size: cover;
   position: relative;
+  overflow: auto;
 }
 
 .transfer {
@@ -13,7 +14,7 @@
   background: $theme-foreground;
   border-top: 2px solid $theme-primary;
   padding: 24px 24px 28px 24px;
-  margin: 0 auto;
+  margin: 24px auto;
 
   // Large devices (desktops, 992px and up)
   @media (min-width: 992px) {

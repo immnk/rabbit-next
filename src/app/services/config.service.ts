@@ -30,7 +30,7 @@ export const APP_DI_CONFIG: AppConfig = {
   CUSTOMER_KEY_STORAGE: 'customerId',
   GRAPH_EXPENDITURE: 'accounts/trends',
   transactions: 'getTransactions',
-  canibuy: '',
+  canibuy: 'https://h2h18-ml.cfapps.io/',
   transfer: 'transfer'
 }
 
