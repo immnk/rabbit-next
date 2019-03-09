@@ -15,7 +15,7 @@ const routes: Routes = [
     path: 'dashboard', component: DashboardComponent, children: [
       { path: '', redirectTo: 'accounts', pathMatch: 'full' },
       { path: 'accounts', component: AccountListComponent },
-      { path: 'transactions', component: TransactionListComponent },
+      { path: 'transactions/:id', component: TransactionListComponent },
       { path: 'transfer', component: TransferComponent },
       { path: 'frames/:type', component: FramesComponent }
     ]

@@ -12,12 +12,22 @@
     object-fit: contain;
     margin-left: 12px;
   }
+
+  .app-name {
+    color: #fff;
+    padding: 0 12px;
+    font-weight: bold;
+    font-size: 20px;
+  }
 }
 
-.content-window {
-  min-height: calc(100vh - 54px - 24px);
-
-  .side-nav {
-    background: $theme-primary;
+.side-nav {
+  .list-group {
+    flex-direction: row;
+    overflow-y: scroll;
+    flex-grow: 1;
+  }
+  .active {
+    border-bottom: 2px solid #0143a3;
   }
 }

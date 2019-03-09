@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
       this.http.post(this.config.REST_END_POINT + this.config.login, body).subscribe((res: any) => {
         if (res.success) {
           console.log('Authenticated user');
-          this.storage.store('boundValue', res.customer_id);
+          this.storage.store(this.config.CUSTOMER_KEY_STORAGE, res.customer_id);
           this.router.navigate(['/dashboard']);
         } else {
           this.isError = true;

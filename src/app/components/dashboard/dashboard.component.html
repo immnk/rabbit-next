@@ -2,22 +2,22 @@
   <div class="row no-gutters">
     <div class="col-12 top-nav">
       <img src="../../../assets/Genie_Right-Small.png" alt="logo" class="logo rounded-circle" />
-      <span>Genie App</span>
+      <span class="app-name">Genie App</span>
     </div>
   </div>
-  <div class="row no-gutters content-window">
-    <div class="d-none d-md-block col-md-3 side-nav">
-      <div class="list-group">
-        <a routerLink="/dashboard" routerLinkActive="active" class="list-group-item list-group-item-action rounded-0">Home</a>
-        <a routerLink="/dashboard/transfer" routerLinkActive="active" class="list-group-item list-group-item-action rounded-0">Transfer</a>
-        <a routerLink="/dashboard/frames/cards" routerLinkActive="active" class="list-group-item list-group-item-action rounded-0">Cards</a>
-        <a routerLink="/dashboard/frames/currency" routerLinkActive="active" class="list-group-item list-group-item-action rounded-0">Currency Converter</a>
-        <a routerLink="/dashboard/frames/contact" routerLinkActive="active" class="list-group-item list-group-item-action rounded-0">Contact Us</a>
-        <a routerLink="/settings" class="list-group-item list-group-item-action rounded-0">Settings</a>
-      </div>
+  <div class="row no-gutters side-nav">
+    <div class="list-group">
+      <a routerLink="/dashboard" routerLinkActive="active" class="list-group-item list-group-item-action rounded-0">Home</a>
+      <a routerLink="/dashboard/transfer" routerLinkActive="active" class="list-group-item list-group-item-action rounded-0">Transfer</a>
+      <a routerLink="/dashboard/frames/cards" routerLinkActive="active" class="list-group-item list-group-item-action rounded-0">Cards</a>
+      <a routerLink="/dashboard/frames/currency" routerLinkActive="active" class="list-group-item list-group-item-action rounded-0">Currency
+        Converter</a>
+      <a routerLink="/dashboard/frames/contact" routerLinkActive="active" class="list-group-item list-group-item-action rounded-0">Contact
+        Us</a>
+      <a routerLink="/settings" class="list-group-item list-group-item-action rounded-0">Settings</a>
     </div>
-    <div class="col-sm-12 col-md-9 main-nav">
-      <router-outlet></router-outlet>
-    </div>
+  </div>
+  <div class="row no-gutters main-nav">
+    <router-outlet></router-outlet>
   </div>
 </div>

@@ -10,6 +10,7 @@ export interface AppConfig {
   REST_END_POINT: string;
   login: string;
   accounts: string;
+  CUSTOMER_KEY_STORAGE: string;
 }
 
 /**
@@ -18,8 +19,11 @@ export interface AppConfig {
 export const APP_DI_CONFIG: AppConfig = {
   appName: 'Genie',
   REST_END_POINT: environment.END_POINT,
-  login: 'login',
-  accounts: 'accounts'
+  // login: 'login',
+  login: '5c83a16d30000040176b0cac',
+  accounts: '5c83a0ce300000740d6b0caa',
+  CUSTOMER_KEY_STORAGE: 'customerId'
+  // accounts: 'accounts'
 }
 
 /**

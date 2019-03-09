@@ -1,3 +1,19 @@
-p {
-    color: white;
+.account-list {
+  width: 100vw;
+}
+
+.my-card-wrapper {
+  display: flex;
+
+  .my-cards {
+    position: relative;
+    margin: 12px;
+    min-width: 300px;
+
+    .card-highlight {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+    }
+  }
 }

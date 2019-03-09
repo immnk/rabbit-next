@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  END_POINT: "http://192.168.0.106:8080/"
+  END_POINT: 'http://www.mocky.io/v2/'
+  // END_POINT: "http://192.168.0.106:8080/"
 };
 
 /*
