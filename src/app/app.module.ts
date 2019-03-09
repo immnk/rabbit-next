@@ -1,31 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HttpClientModule, HttpClient, HttpClientXsrfModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app.routing.module';
 import { APP_DI_CONFIG, APP_CONFIG_TOKEN } from './services/config.service';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
-import { MatInputModule, MatButtonModule } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgxWebstorageModule} from 'ngx-webstorage';
+import { AccountListComponent } from './components/account-list/account-list.component';
+import { TransactionListComponent } from './components/transaction-list/transaction-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    AccountListComponent,
+    TransactionListComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule, MatButtonModule
+    NgbModule,
+    NgxWebstorageModule.forRoot(),
   ],
   providers: [
     { provide: APP_CONFIG_TOKEN, useValue: APP_DI_CONFIG },

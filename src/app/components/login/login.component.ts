@@ -30,18 +30,16 @@ export class LoginComponent implements OnInit {
   loginClicked() {
     if (this.form.valid) {
       const body = {
-        headers: {
-        },
-        params: {
-          username: this.form.get('username').value,
-          password: this.form.get('password').value
-        }
+        userName: this.form.get('username').value,
+        password: this.form.get('password').value
       }
-      this.http.post(this.config.REST_END_POINT + this.config.login, body).subscribe(res => {
-        console.log('Authenticated user');
-        this.router.navigate(['/dashboard']);
+      this.http.post(this.config.REST_END_POINT + this.config.login, body).subscribe((res: any) => {
+        if (res.success) {
+          console.log('Authenticated user');
+          this.router.navigate(['/dashboard']);
+        }
       }, err => {
-        console.error('Error in loggin');
+        console.error('Error in logging');
       });
     }
   }

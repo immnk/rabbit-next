@@ -1,6 +1,6 @@
 @import '../../../assets/scss/variables';
 
-.container {
+.container-fluid {
   min-height: 100vh;
   background: $theme-foreground url('../../../assets/skyine.jpg') no-repeat;
   background-size: cover;
@@ -20,7 +20,7 @@
   .logo {
     display: block;
     height: 100px;
-    margin: 0 auto;
+    margin: 12px auto;
   }
 
   mat-form-field {
