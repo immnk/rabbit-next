@@ -7,22 +7,17 @@
   .logo {
     background: $theme-foreground;
     padding: 6px;
-    height: 60px;
-    width: 60px;
+    height: 54px;
+    width: 54px;
     object-fit: contain;
-    border-radius: 50%;
     margin-left: 12px;
   }
 }
 
 .content-window {
-  min-height: calc(100vh - 60px - 24px);
+  min-height: calc(100vh - 54px - 24px);
 
   .side-nav {
-    background: yellow;
-  }
-
-  .main-nav {
-    background: red;
+    background: $theme-primary;
   }
 }

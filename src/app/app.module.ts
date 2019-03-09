@@ -11,6 +11,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {NgxWebstorageModule} from 'ngx-webstorage';
 import { AccountListComponent } from './components/account-list/account-list.component';
 import { TransactionListComponent } from './components/transaction-list/transaction-list.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { FramesComponent } from './components/frames/frames.component';
+import { TransferComponent } from './components/transfer/transfer.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { TransactionListComponent } from './components/transaction-list/transact
     LoginComponent,
     DashboardComponent,
     AccountListComponent,
-    TransactionListComponent
+    TransactionListComponent,
+    SettingsComponent,
+    FramesComponent,
+    TransferComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

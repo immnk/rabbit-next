@@ -1,4 +1,4 @@
-import { InjectionToken } from "@angular/core";
+import { InjectionToken } from '@angular/core';
 import { environment } from '../../environments/environment';
 
 /**
@@ -9,6 +9,7 @@ export interface AppConfig {
   appName: string;
   REST_END_POINT: string;
   login: string;
+  accounts: string;
 }
 
 /**
@@ -17,7 +18,8 @@ export interface AppConfig {
 export const APP_DI_CONFIG: AppConfig = {
   appName: 'Genie',
   REST_END_POINT: environment.END_POINT,
-  login: 'login'
+  login: 'login',
+  accounts: 'accounts'
 }
 
 /**

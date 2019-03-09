@@ -1,16 +1,17 @@
 <div class="container-fluid">
-  <form class="login" [formGroup]="form" (submit)="loginClicked()">
+  <form class="login" [formGroup]="form" (submit)="loginClicked()" novalidate>
     <img src="../../../assets/Genie_Right-Small.png" alt="logo" class="logo">
     <div class="form-group">
       <label for="username">Username</label>
       <input type="text" class="form-control" id="username" aria-describedby="username" placeholder="Enter username"
-        formControlName="username" required>
+        formControlName="username" [ngClass]="{ 'error': form.controls['username'].invalid && (form.controls['username'].dirty || form.controls['username'].touched) && form.controls['username'].errors.required }">
     </div>
     <div class="form-group">
       <label for="password">Password</label>
       <input type="password" class="form-control" id="password" placeholder="Enter password" formControlName="password"
-        required>
+        [ngClass]="{ 'error': form.controls['password'].invalid && (form.controls['password'].dirty || form.controls['password'].touched) && form.controls['password'].errors.required }">
     </div>
+    <div class="text-danger p-y-2" *ngIf="isError">Please check your username/password</div>
     <div class="form-group form-check">
       <input type="checkbox" class="form-check-input" id="remember">
       <label class="form-check-label" for="remember">Remember be</label>
