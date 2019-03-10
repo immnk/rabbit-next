@@ -1,6 +1,6 @@
 <div class="account-info">
   <h4>DBS Multiplier Account</h4>
-  <p>220-1234566</p>
+  <p>DBS XXX - XXXX{{account_id}}</p>
   <div class="row no-gutters">
     <div class="col-6 border-right">
       <p class="row-title">Account Balance</p>
@@ -27,13 +27,9 @@
     </label>
   </div>
   <ul class="list-group">
-    <li class="list-group-item">
-      <p>TRF STARBUCKS MERCHANT</p>
-      <h3 class="float-md-right">S$ 450.00</h3>
-    </li>
-    <li class="list-group-item">
-      <p>TRF STARBUCKS MERCHANT</p>
-      <h3 class="float-md-right">S$ 450.00</h3>
+    <li class="list-group-item" *ngFor="let t of transactions">
+      <p>{{t.desc}}</p>
+      <h3 class="float-md-right">S$ {{t.amount}}</h3>
     </li>
   </ul>
 </div>

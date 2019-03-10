@@ -25,6 +25,7 @@ export class TransactionListComponent implements OnInit {
     'November',
     'December'
   ];
+  account_id: string;
   currentMonthIndex = (new Date().getMonth() + this.m.length) % this.m.length;
   lastMonthIndex = (this.currentMonthIndex - 1 + this.m.length) % this.m.length;
   beforeLastMonthIndex = (this.currentMonthIndex - 2 + this.m.length) % this.m.length;
@@ -48,6 +49,7 @@ export class TransactionListComponent implements OnInit {
   getTxnDetails(m) {
     this.route.params.subscribe(params => {
       console.log(params);
+      this.account_id = params.id;
       const options = {
         headers: {},
         params: {
