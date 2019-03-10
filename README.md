@@ -1,5 +1,7 @@
 # RabbitNext
 
+[![Build Status](https://travis-ci.com/immnk/rabbit-next.svg?branch=master)](https://travis-ci.com/immnk/rabbit-next)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
 
 ## Development server
