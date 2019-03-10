@@ -5,12 +5,13 @@
   color: white;
 
   h4,
-  p,.col-6 p {
+  p,
+  .col-6 p {
     text-align: center;
   }
 
   .row-title {
-      font-size: 18px;
+    font-size: 18px;
   }
 }
 
@@ -20,4 +21,10 @@
 
 .btn-group {
   width: 100%;
+}
+
+.small-size {
+  color: gray;
+  font-size: 12px;
+  margin: 0;
 }

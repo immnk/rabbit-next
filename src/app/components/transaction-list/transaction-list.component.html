@@ -4,11 +4,11 @@
   <div class="row no-gutters">
     <div class="col-6 border-right">
       <p class="row-title">Account Balance</p>
-      <p>$3000.00</p>
+      <p>$XXX.XX</p>
     </div>
     <div class="col-6">
       <p class="row-title">Available Balance</p>
-      <p>$2700.00</p>
+      <p>$XXX.XX</p>
     </div>
   </div>
 </div>
@@ -28,7 +28,8 @@
   </div>
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let t of transactions">
-      <p>{{t.desc}}</p>
+      <p class="m-0">{{t.account_id}} :: {{t.operation}}_{{t.type}}</p>
+      <p class="font-italic small-size">{{t.date}}</p>
       <h3 class="float-md-right">S$ {{t.amount}}</h3>
     </li>
   </ul>
