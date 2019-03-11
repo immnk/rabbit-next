@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.com/immnk/rabbit-next.svg?branch=master)](https://travis-ci.com/immnk/rabbit-next)
 
+> RabbitNext is a next-gen UI platform that address basic functionalities for a bank like login, dashboard, accounts listing, view past transactions and funds transfers
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
 
 ## Development server
